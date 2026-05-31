@@ -1,0 +1,55 @@
+{
+  "name": "project-evolution-engine",
+  "version": "1.0.0",
+  "description": "Backend API for Project Evolution Engine — tracks, scores, and snapshots GitHub projects",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "db:init": "node src/config/initDb.js"
+  },
+  "dependencies": {
+    "@qdrant/js-client-rest": "^1.17.0",
+    "@xenova/transformers": "^2.0.1",
+    "axios": "^1.15.0",
+    "bcryptjs": "^3.0.3",
+    "bullmq": "^5.73.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-mongo-sanitize": "^2.2.0",
+    "express-rate-limit": "^8.5.2",
+    "firebase-admin": "^10.3.0",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "ioredis": "^5.10.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^7.1.1",
+    "morgan": "^1.10.0",
+    "nodemailer": "^8.0.7",
+    "onnxruntime-node": "^1.24.3",
+    "openai": "^6.34.0",
+    "pdfkit": "^0.18.0",
+    "socket.io": "^4.8.3",
+    "xss-clean": "^0.1.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "src"
+    ],
+    "ignore": [
+      "repos/*",
+      "repos/**/*",
+      "**/*.git",
+      "node_modules"
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}

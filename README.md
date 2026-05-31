@@ -136,32 +136,14 @@ graph TD
 
 ## 📸 Demo & Screenshots
 
-### Home & Authentication
-| Home Page | Login Page |
+| | |
 | :---: | :---: |
-| <img src="frontend/public/assets/i1.png" alt="Home Page" width="400"/> | <img src="frontend/public/assets/i2.png" alt="Login Page" width="400"/> |
-
-| Login with Google | Authenticate by Code |
-| :---: | :---: |
-| <img src="frontend/public/assets/i3.png" alt="Login with Google" width="400"/> | <img src="frontend/public/assets/i12.png" alt="Authenticate by Code" width="400"/> |
-
-### Dashboard & Setup
-| Empty Dashboard | Add by URL |
-| :---: | :---: |
-| <img src="frontend/public/assets/i4.png" alt="Empty Dashboard" width="400"/> | <img src="frontend/public/assets/i5.png" alt="Add by URL" width="400"/> |
-
-| Connect GitHub (Private Repos) | Dashboard with Repository |
-| :---: | :---: |
-| <img src="frontend/public/assets/i11.png" alt="Connect GitHub" width="400"/> | <img src="frontend/public/assets/i9.png" alt="Dashboard with one repo" width="400"/> |
-
-### Repository Analysis & Settings
-| Initial Setup / Sync | Loading Analysis |
-| :---: | :---: |
-| <img src="frontend/public/assets/i6.png" alt="Initial Setup" width="400"/> | <img src="frontend/public/assets/i7.png" alt="Loading Analysis" width="400"/> |
-
-| Project Overview & Data | Settings Page |
-| :---: | :---: |
-| <img src="frontend/public/assets/i8.png" alt="Overview page with data" width="400"/> | <img src="frontend/public/assets/i10.png" alt="Settings Page" width="400"/> |
+| <img src="frontend/public/assets/i1.png" alt="Home Page" width="400"/><br/>**Home Page** | <img src="frontend/public/assets/i2.png" alt="Login Page" width="400"/><br/>**Login Page** |
+| <img src="frontend/public/assets/i3.png" alt="Login with Google" width="400"/><br/>**Login with Google** | <img src="frontend/public/assets/i4.png" alt="Empty Dashboard" width="400"/><br/>**Empty Dashboard** |
+| <img src="frontend/public/assets/i5.png" alt="Add by URL" width="400"/><br/>**Add by URL** | <img src="frontend/public/assets/i6.png" alt="Initial Setup" width="400"/><br/>**Initial Setup / Sync** |
+| <img src="frontend/public/assets/i7.png" alt="Loading Analysis" width="400"/><br/>**Loading Analysis** | <img src="frontend/public/assets/i8.png" alt="Project Overview" width="400"/><br/>**Project Overview & Data** |
+| <img src="frontend/public/assets/i9.png" alt="Dashboard with one repo" width="400"/><br/>**Dashboard with Repository** | <img src="frontend/public/assets/i10.png" alt="Settings Page" width="400"/><br/>**Settings Page** |
+| <img src="frontend/public/assets/i11.png" alt="Connect GitHub" width="400"/><br/>**Connect GitHub (Private Repos)** | <img src="frontend/public/assets/i12.png" alt="Authenticate by Code" width="400"/><br/>**Authenticate by Code** |
 
 ---
 

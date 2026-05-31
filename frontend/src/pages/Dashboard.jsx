@@ -93,11 +93,11 @@ const Dashboard = () => {
     setSubmitError("");
     setSubmitting(true);
     try {
-      await createProject(newProject);
+      const result = await createProject(newProject);
       setIsManualModalOpen(false);
       setNewProject({ name: "", github_url: "" });
       setRepoCheck(null);
-      fetchProjects();
+      navigate(`/projects/${result.id}`);
     } catch (err) {
       const errData = err.response?.data;
       setSubmitError(errData?.error || "Failed to create project");

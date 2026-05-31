@@ -19,7 +19,7 @@ const ForgotPassword = () => {
 
     try {
       const actionCodeSettings = {
-        url: `${window.location.origin}/auth/reset-password`,
+        url: 'https://repolens07.vercel.app/auth/action',
         handleCodeInApp: true,
       };
       await sendPasswordResetEmail(auth, email, actionCodeSettings);

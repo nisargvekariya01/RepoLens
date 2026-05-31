@@ -24,7 +24,7 @@ const Register = () => {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       
       const actionCodeSettings = {
-        url: `${window.location.origin}/auth/verify-email`,
+        url: 'https://repolens07.vercel.app/auth/action',
         handleCodeInApp: true,
       };
       

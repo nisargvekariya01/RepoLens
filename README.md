@@ -5,6 +5,8 @@
   
   **The ultimate Project Evolution Engine — tracking, scoring, and snapshotting GitHub projects.**
   
+  🌐 **Live Site:** [https://repolens07.vercel.app/](https://repolens07.vercel.app/)
+  
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
   [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
   [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)

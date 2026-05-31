@@ -13,6 +13,7 @@ import ForgotPassword from "./pages/ForgotPassword";
 import VerifyEmail from "./pages/VerifyEmail";
 import AuthVerifyEmail from "./pages/AuthVerifyEmail";
 import AuthResetPassword from "./pages/AuthResetPassword";
+import AuthAction from "./pages/AuthAction";
 import Home from "./pages/Home";
 import { ToastProvider } from "./context/ToastContext";
 
@@ -112,7 +113,7 @@ function App() {
         <div className="flex flex-col min-h-screen relative bg-[#050816] text-slate-200">
           <AuroraBackground />
           <Navbar user={user} loading={loading} />
-          <main className="flex-grow flex flex-col relative z-10 w-full">
+          <main className="flex-grow flex flex-col relative z-20 w-full">
             <Routes>
               <Route path="/login" element={user ? <Navigate to="/dashboard" replace /> : <Login />} />
               <Route path="/register" element={user ? <Navigate to="/dashboard" replace /> : <Register />} />
@@ -125,6 +126,11 @@ function App() {
                     <VerifyEmail />
                   </ProtectedRoute>
                 } 
+              />
+
+              <Route 
+                path="/auth/action" 
+                element={<AuthAction />} 
               />
 
               <Route 

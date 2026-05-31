@@ -19,7 +19,7 @@ const VerifyEmail = () => {
     setResending(true);
     try {
       const actionCodeSettings = {
-        url: `${window.location.origin}/auth/verify-email`,
+        url: 'https://repolens07.vercel.app/auth/action',
         handleCodeInApp: true,
       };
       await sendEmailVerification(user, actionCodeSettings);

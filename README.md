@@ -7,6 +7,8 @@
   
   🌐 **Live Site:** [https://repolens07.vercel.app/](https://repolens07.vercel.app/)
   
+  > ⚠️ **Note on Live Demo:** The live hosted site currently operates using mock/demo data. Due to the high computational costs, API rate limits (GitHub, OpenAI/Groq), and heavy background processing requirements (Redis/BullMQ) needed for actual repository analysis, real-time repository fetching and AI generation are meant to be run in a local development environment.
+  
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
   [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
   [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com/)

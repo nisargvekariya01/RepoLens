@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://via.placeholder.com/150?text=RepoLens" alt="RepoLens Logo" width="120" height="120" />
+  <img src="frontend/public/repolens-logo.png" alt="RepoLens Logo" width="120" height="120" />
   
   # 🔍 RepoLens
   

@@ -57,6 +57,58 @@
 
 ---
 
+## ⚙️ Architecture & Pipeline Workflow
+
+RepoLens utilizes a robust, dual-stage asynchronous pipeline powered by **BullMQ** and **Redis** to ensure scalable and reliable processing of GitHub repositories.
+
+### 1. Project Sync Pipeline (`projectSync.worker`)
+When a repository is added or refreshed, the Project Sync worker is triggered:
+- **Data Ingestion**: Fetches metadata, commit history, issues, PRs, and contributor stats via the GitHub API (or local path bypass).
+- **Health Scoring**: Calculates a repository "health score" based on activity and engagement metrics.
+- **Snapshot Creation**: Stores a historical snapshot of the repository state in MongoDB.
+- **Alerts & Recommendations**: Generates actionable insights and triggers any configured alerts.
+- **Trigger**: Automatically queues the AI Analysis job upon completion.
+
+### 2. AI Analysis & Embedding Pipeline (`aiAnalysis.worker`)
+The AI worker performs deep-dive code intelligence using a Retrieval-Augmented Generation (RAG) architecture:
+- **Repository Cloning**: Clones the repository locally (depth=1).
+- **Repomix Parsing**: Runs Repomix to intelligently parse, chunk, and extract the codebase structure into prioritized files.
+- **Vector Embedding**: Embeds the code chunks into **Qdrant** (Vector DB) for lightning-fast semantic search.
+- **RAG + LLM Generation**: Uses focused queries against Qdrant to pull relevant context, feeding it to **Gemini/OpenAI** to generate a comprehensive code quality and tech trend report.
+- **Real-Time Delivery**: Streams live progress updates back to the frontend via **Socket.io**.
+
+### 🔄 Pipeline Diagram
+
+```mermaid
+graph TD
+    Client[Frontend Client] -->|Add Repo / OAuth| API[Express API]
+    API -->|Queue Job| RedisQueue[(Redis + BullMQ)]
+    
+    subgraph Stage 1: Project Sync
+        RedisQueue -->|Pop| SyncWorker[Project Sync Worker]
+        SyncWorker -->|Fetch Stats| GitHubAPI[GitHub API]
+        SyncWorker -->|Calculate Score| ScoringService[Scoring Service]
+        SyncWorker -->|Save Snapshot| MongoDB[(MongoDB)]
+        SyncWorker -->|Queue AI Job| RedisQueue
+    end
+    
+    subgraph Stage 2: AI Analysis
+        RedisQueue -->|Pop| AIWorker[AI Analysis Worker]
+        AIWorker -->|Clone| LocalRepo[Local Git Repo]
+        LocalRepo -->|Parse Codebase| Repomix[Repomix Service]
+        Repomix -->|Chunk & Embed| Qdrant[(Qdrant Vector DB)]
+        Qdrant -->|Retrieve Context| RAGService[RAG Query Service]
+        RAGService -->|Generate Report| LLM[Gemini / OpenAI]
+        LLM -->|Save Report| MongoDB
+    end
+    
+    SyncWorker -.->|Live Updates| SocketIO[Socket.io]
+    AIWorker -.->|Live Updates| SocketIO
+    SocketIO -.->|Progress| Client
+```
+
+---
+
 ## 📸 Demo & Screenshots
 
 > **Note to self:** Drop your screenshots and demo videos in the `frontend/public/assets` folder or host them online, then update the links below!

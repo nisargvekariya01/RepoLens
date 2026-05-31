@@ -2,7 +2,7 @@ const { MongoClient } = require("mongodb");
 require("dotenv").config();
 
 const url = process.env.MONGO_URL;
-const dbName = process.env.DB_NAME || "project-evolution-engine";
+const dbName = process.env.DB_NAME || "repolens";
 
 let client;
 let db;
@@ -17,7 +17,7 @@ async function connectDB() {
     client = new MongoClient(url);
     await client.connect();
     console.log("✅ MongoDB connected successfully");
-    
+
     db = client.db(dbName);
     return db;
   } catch (error) {

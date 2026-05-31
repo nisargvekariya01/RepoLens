@@ -1,5 +1,5 @@
 {
-  "name": "project-evolution-engine",
+  "name": "repolens",
   "version": "1.0.0",
   "description": "Backend API for Project Evolution Engine — tracks, scores, and snapshots GitHub projects",
   "main": "src/server.js",

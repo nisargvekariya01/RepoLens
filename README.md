@@ -229,5 +229,5 @@ npm run dev
 ---
 
 <div align="center">
-  Made with 💖 by [Nisarg Vekariya](https://github.com/nisargvekariya01)
+  Made with 💖 by <a href="https://github.com/nisargvekariya01">Nisarg Vekariya</a>
 </div>

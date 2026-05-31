@@ -16,7 +16,7 @@
   [Tech Stack](#tech-stack) •
   [Demo](#demo--screenshots) •
   [Installation](#installation) •
-  [Usage](#usage) 
+  [Usage](#usage)
 
 </div>
 
@@ -42,6 +42,7 @@
 ## 💻 Tech Stack
 
 ### Frontend
+
 - **Framework:** React + Vite
 - **Styling:** Tailwind CSS, Framer Motion
 - **Data Visualization:** Recharts
@@ -49,6 +50,7 @@
 - **Auth:** Firebase
 
 ### Backend
+
 - **Core:** Node.js, Express
 - **Database:** MongoDB
 - **Queue/Cache:** Redis, BullMQ
@@ -81,7 +83,9 @@ RepoLens/
 RepoLens utilizes a robust, dual-stage asynchronous pipeline powered by **BullMQ** and **Redis** to ensure scalable and reliable processing of GitHub repositories.
 
 ### 1. Project Sync Pipeline (`projectSync.worker`)
+
 When a repository is added or refreshed, the Project Sync worker is triggered:
+
 - **Data Ingestion**: Fetches metadata, commit history, issues, PRs, and contributor stats via the GitHub API (or local path bypass).
 - **Health Scoring**: Calculates a repository "health score" based on activity and engagement metrics.
 - **Snapshot Creation**: Stores a historical snapshot of the repository state in MongoDB.
@@ -89,7 +93,9 @@ When a repository is added or refreshed, the Project Sync worker is triggered:
 - **Trigger**: Automatically queues the AI Analysis job upon completion.
 
 ### 2. AI Analysis & Embedding Pipeline (`aiAnalysis.worker`)
+
 The AI worker performs deep-dive code intelligence using a Retrieval-Augmented Generation (RAG) architecture:
+
 - **Repository Cloning**: Clones the repository locally (depth=1).
 - **Repomix Parsing**: Runs Repomix to intelligently parse, chunk, and extract the codebase structure into prioritized files.
 - **Vector Embedding**: Embeds the code chunks into **Qdrant** (Vector DB) for lightning-fast semantic search.
@@ -102,7 +108,7 @@ The AI worker performs deep-dive code intelligence using a Retrieval-Augmented G
 graph TD
     Client[Frontend Client] -->|Add Repo / OAuth| API[Express API]
     API -->|Queue Job| RedisQueue[(Redis + BullMQ)]
-    
+
     subgraph Stage 1: Project Sync
         RedisQueue -->|Pop| SyncWorker[Project Sync Worker]
         SyncWorker -->|Fetch Stats| GitHubAPI[GitHub API]
@@ -110,7 +116,7 @@ graph TD
         SyncWorker -->|Save Snapshot| MongoDB[(MongoDB)]
         SyncWorker -->|Queue AI Job| RedisQueue
     end
-    
+
     subgraph Stage 2: AI Analysis
         RedisQueue -->|Pop| AIWorker[AI Analysis Worker]
         AIWorker -->|Clone| LocalRepo[Local Git Repo]
@@ -120,7 +126,7 @@ graph TD
         RAGService -->|Generate Report| LLM[Gemini / OpenAI]
         LLM -->|Save Report| MongoDB
     end
-    
+
     SyncWorker -.->|Live Updates| SocketIO[Socket.io]
     AIWorker -.->|Live Updates| SocketIO
     SocketIO -.->|Progress| Client
@@ -134,8 +140,8 @@ graph TD
 
 ### 🖼️ Screenshots
 
-| Dashboard View | Repository Analysis |
-| :---: | :---: |
+|                                               Dashboard View                                                |                                              Repository Analysis                                               |
+| :---------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
 | <img src="https://via.placeholder.com/600x350?text=Dashboard+Screenshot" alt="Dashboard View" width="400"/> | <img src="https://via.placeholder.com/600x350?text=Analysis+Screenshot" alt="Repo Analysis View" width="400"/> |
 
 ### 🎥 Video Walkthrough
@@ -171,6 +177,7 @@ cd RepoLens
 cd backend
 npm install
 ```
+
 - Copy `.env.example` to `.env` and fill in your environment variables:
   - **Database & Cache**: `MONGO_URL`, `DB_NAME`, `REDIS_URL`
   - **Auth**: `JWT_SECRET`, `TOKEN_ENCRYPTION_KEY`
@@ -179,10 +186,13 @@ npm install
   - **AI / LLM**: `GROQ_API_KEY`, `OPENAI_BASE_URL`, `LLM_MODEL`
   - **Vector DB**: `QDRANT_URL`, `QDRANT_API_KEY`
 - Initialize the Database:
+
 ```bash
 npm run db:init
 ```
+
 - Start the development server:
+
 ```bash
 npm run dev
 ```
@@ -190,15 +200,18 @@ npm run dev
 ### 3. Frontend Setup
 
 Open a new terminal window:
+
 ```bash
 cd frontend
 npm install
 ```
+
 - Copy `.env.example` to `.env` and fill in your environment variables:
   - `VITE_API_URL` (e.g., http://localhost:5000)
   - `VITE_FIREBASE_API_KEY`
   - `VITE_FIREBASE_AUTH_DOMAIN`
 - Start the Vite development server:
+
 ```bash
 npm run dev
 ```
@@ -216,9 +229,5 @@ npm run dev
 ---
 
 <div align="center">
-<<<<<<< HEAD
   Made with 💖 by [Nisarg Vekariya](https://github.com/nisargvekariya01)
-=======
-  Made with ❤️ by [Nisarg Vekariya](https://github.com/nisargvekariya01)
->>>>>>> 0cd91a26e729150b17ca59d629b6977aa7741ed7
 </div>

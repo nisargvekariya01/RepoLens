@@ -59,6 +59,23 @@
 
 ---
 
+## 📂 Project Structure
+
+```text
+RepoLens/
+├── backend/            # Express API, MongoDB models, background workers
+│   ├── src/controllers/
+│   ├── src/services/
+│   └── src/workers/    # BullMQ job processors for AI & syncing
+├── frontend/           # React + Vite application
+│   ├── src/components/ # Reusable UI components
+│   ├── src/pages/      # Dashboard, Authentication, and Views
+│   └── src/api/        # Axios API clients
+└── README.md
+```
+
+---
+
 ## ⚙️ Architecture & Pipeline Workflow
 
 RepoLens utilizes a robust, dual-stage asynchronous pipeline powered by **BullMQ** and **Redis** to ensure scalable and reliable processing of GitHub repositories.
@@ -154,7 +171,13 @@ cd RepoLens
 cd backend
 npm install
 ```
-- Copy `.env.example` to `.env` and fill in your environment variables (MongoDB URI, Redis URI, OpenAI Key, Firebase Admin credentials, Qdrant URL, etc.)
+- Copy `.env.example` to `.env` and fill in your environment variables:
+  - **Database & Cache**: `MONGO_URL`, `DB_NAME`, `REDIS_URL`
+  - **Auth**: `JWT_SECRET`, `TOKEN_ENCRYPTION_KEY`
+  - **Firebase Admin**: `FIREBASE_PROJECT_ID`, `FIREBASE_CLIENT_EMAIL`, `FIREBASE_PRIVATE_KEY`
+  - **GitHub OAuth**: `GITHUB_CLIENT_ID`, `GITHUB_CLIENT_SECRET`, `GITHUB_CALLBACK_URL`
+  - **AI / LLM**: `GROQ_API_KEY`, `OPENAI_BASE_URL`, `LLM_MODEL`
+  - **Vector DB**: `QDRANT_URL`, `QDRANT_API_KEY`
 - Initialize the Database:
 ```bash
 npm run db:init
@@ -171,7 +194,10 @@ Open a new terminal window:
 cd frontend
 npm install
 ```
-- Copy `.env.example` to `.env` and insert your Firebase config and Backend API URLs.
+- Copy `.env.example` to `.env` and fill in your environment variables:
+  - `VITE_API_URL` (e.g., http://localhost:5000)
+  - `VITE_FIREBASE_API_KEY`
+  - `VITE_FIREBASE_AUTH_DOMAIN`
 - Start the Vite development server:
 ```bash
 npm run dev
@@ -193,6 +219,12 @@ npm run dev
 
 Contributions, issues, and feature requests are welcome! 
 Feel free to check out the [issues page](https://github.com/yourusername/RepoLens/issues).
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 

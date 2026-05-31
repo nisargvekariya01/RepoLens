@@ -136,22 +136,32 @@ graph TD
 
 ## 📸 Demo & Screenshots
 
-> **Note to self:** Drop your screenshots and demo videos in the `frontend/public/assets` folder or host them online, then update the links below!
+### Home & Authentication
+| Home Page | Login Page |
+| :---: | :---: |
+| <img src="frontend/public/assets/i1.png" alt="Home Page" width="400"/> | <img src="frontend/public/assets/i2.png" alt="Login Page" width="400"/> |
 
-### 🖼️ Screenshots
+| Login with Google | Authenticate by Code |
+| :---: | :---: |
+| <img src="frontend/public/assets/i3.png" alt="Login with Google" width="400"/> | <img src="frontend/public/assets/i12.png" alt="Authenticate by Code" width="400"/> |
 
-|                                               Dashboard View                                                |                                              Repository Analysis                                               |
-| :---------------------------------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------------------------------: |
-| <img src="https://via.placeholder.com/600x350?text=Dashboard+Screenshot" alt="Dashboard View" width="400"/> | <img src="https://via.placeholder.com/600x350?text=Analysis+Screenshot" alt="Repo Analysis View" width="400"/> |
+### Dashboard & Setup
+| Empty Dashboard | Add by URL |
+| :---: | :---: |
+| <img src="frontend/public/assets/i4.png" alt="Empty Dashboard" width="400"/> | <img src="frontend/public/assets/i5.png" alt="Add by URL" width="400"/> |
 
-### 🎥 Video Walkthrough
+| Connect GitHub (Private Repos) | Dashboard with Repository |
+| :---: | :---: |
+| <img src="frontend/public/assets/i11.png" alt="Connect GitHub" width="400"/> | <img src="frontend/public/assets/i9.png" alt="Dashboard with one repo" width="400"/> |
 
-<div align="center">
-  <a href="YOUR_YOUTUBE_OR_VIDEO_LINK_HERE">
-    <img src="https://via.placeholder.com/800x450?text=Click+to+watch+the+Video+Walkthrough" alt="Video Walkthrough" />
-  </a>
-  <p><i>Click the image above to watch a full walkthrough of RepoLens in action!</i></p>
-</div>
+### Repository Analysis & Settings
+| Initial Setup / Sync | Loading Analysis |
+| :---: | :---: |
+| <img src="frontend/public/assets/i6.png" alt="Initial Setup" width="400"/> | <img src="frontend/public/assets/i7.png" alt="Loading Analysis" width="400"/> |
+
+| Project Overview & Data | Settings Page |
+| :---: | :---: |
+| <img src="frontend/public/assets/i8.png" alt="Overview page with data" width="400"/> | <img src="frontend/public/assets/i10.png" alt="Settings Page" width="400"/> |
 
 ---
 

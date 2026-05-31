@@ -229,5 +229,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-  Made with ❤️ by [Nisarg Vekariya]
+  Made with 💖 by [Nisarg Vekariya](https://github.com/nisargvekariya01)
 </div>

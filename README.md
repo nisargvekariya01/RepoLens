@@ -215,19 +215,10 @@ npm run dev
 
 ---
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! 
-Feel free to check out the [issues page](https://github.com/yourusername/RepoLens/issues).
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
 <div align="center">
+<<<<<<< HEAD
   Made with 💖 by [Nisarg Vekariya](https://github.com/nisargvekariya01)
+=======
+  Made with ❤️ by [Nisarg Vekariya](https://github.com/nisargvekariya01)
+>>>>>>> 0cd91a26e729150b17ca59d629b6977aa7741ed7
 </div>
